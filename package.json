@@ -13,7 +13,8 @@
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "typescript": "^3.9.2"
   },
   "scripts": {
     "start": "react-scripts start",
