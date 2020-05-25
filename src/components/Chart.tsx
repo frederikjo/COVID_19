@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const H1 = styled.h1`
@@ -9,8 +9,6 @@ const H1 = styled.h1`
   border-radius: 3px;
 `;
 
-const Chart = () => {
-    return <H1>Chart</H1>
+export const Chart: FC = () => {
+  return <h1>Chart</h1>
 }
-
-export default Chart;
