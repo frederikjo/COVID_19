@@ -5,9 +5,12 @@ import styled from 'styled-components';
 
 const AppBody = styled.div`
     background: rgb(250, 250, 250);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 
