@@ -1,3 +1,3 @@
-export * from './Cards'
-export * from './Chart'
-export * from './CountryPicker'
+export * from './Cards/Cards'
+export * from './Chart/Chart'
+export * from './CountryPicker/CountryPicker'

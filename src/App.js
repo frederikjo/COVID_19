@@ -1,22 +1,11 @@
 import React from 'react';
 import { Cards, Chart, CountryPicker } from './components';
 import { fetchData } from './api';
-import styled from 'styled-components';
-
-const AppBody = styled.div`
-    background: rgb(250, 250, 250);
-
-    > div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-`;
-
-
+import styles from './App.module.css'
 class App extends React.Component {
     state = {
         data: {},
+        country: '',
     }
 
     async componentDidMount() {
@@ -25,15 +14,25 @@ class App extends React.Component {
         this.setState({ data: fetchedData });
     }
 
+    handleCountryChange = async (country) => {
+        const fetchedData = await fetchData(country);
+
+        this.setState({ data: fetchedData, country: country })
+
+        console.log(fetchedData);
+        // fetch data
+        // set state
+    }
+
 
     render() {
-        const { data } = this.state;
+        const { data, country } = this.state;
         return (
-            <AppBody>
+            <div className={styles.container}>
                 <Cards data={data} />
-                <CountryPicker />
-                <Chart />
-            </AppBody>
+                <CountryPicker handleCountryChange={this.handleCountryChange} />
+                <Chart data={data} country={country} />
+            </div>
         )
     }
 }
